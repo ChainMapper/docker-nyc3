@@ -4,6 +4,7 @@ cat  << EOF
 rpcuser=$USER
 rpcpassword=$PASSWORD
 rpcallowip=$RPCALLOW
+rpcbind=0.0.0.0
 rpcport=6666
 txindex=1
 listen=1
