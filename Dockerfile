@@ -1,8 +1,9 @@
 FROM chainmapper/walletbase-bionic
 
-ADD nyc3.zip /nyc3.zip
+ENV WALLET_URL=https://github.com/wkibbler/nyc3/releases/download/v0.1/linux.zip
 
-RUN unzip /nyc3.zip -d /usr/local/bin \
+RUN wget $WALLET_URL -O /tmp/wallet.zip \
+	&& unzip /tmp/wallet.zip -d /usr/local/bin \
 	&& chmod +x /usr/local/bin/*
 
 #zmq, rpc & main port
